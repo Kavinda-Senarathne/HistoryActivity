@@ -1,6 +1,7 @@
 export class History{
   type:string;
-  summary:any;
+  description:any;
   modifiedBy:any;
-  ModifiedDate:Date;
+  modifiedDate:Date
+
 }

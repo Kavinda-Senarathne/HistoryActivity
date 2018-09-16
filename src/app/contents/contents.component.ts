@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {History} from '../models/history';
+import {HttpClientModule} from '@angular/common/http';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+import { ContentsService } from './contents.service';
 
 @Component({
   selector: 'app-contents',
@@ -7,13 +10,19 @@ import {History} from '../models/history';
   styleUrls: ['./contents.component.css']
 })
 export class ContentsComponent implements OnInit {
-
-  history:History[];
-  constructor() { }
-
-
-
+  public history=[];
+  constructor(private contentsService:ContentsService){}
   ngOnInit() {
+    this.contentsService.getHistoryData()
+    .subscribe(data => this.history= data);
+
+
   }
 
 }
+
+
+
+
+
+

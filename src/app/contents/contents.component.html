@@ -1,6 +1,9 @@
 <div>
-  <ul class="list-group">
-    <li class="list-group-item active">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
+  <ul class="list-group" *ngFor="let historyactivity of history">
+    <li class="list-group-item">You created a {{historyactivity.type}}
+    <p> {{historyactivity.modifiedDate}}</p></li>
+    <li class="list-group-item">{{historyactivity.description}}</li>
   </ul>
 </div>
+
+
