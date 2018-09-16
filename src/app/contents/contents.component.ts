@@ -12,7 +12,7 @@ export class ContentsComponent implements OnInit {
   constructor() { }
 
 
-  
+
   ngOnInit() {
   }
 
