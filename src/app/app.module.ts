@@ -7,10 +7,12 @@ import { ContentsComponent } from './contents/contents.component';
 import { ContentsService } from './contents/contents.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ContentsComponent
+
   ],
   imports: [
     BrowserModule,

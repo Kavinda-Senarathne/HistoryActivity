@@ -13,4 +13,5 @@ export class ContentsService {
    getHistoryData(){
      return this.http.get<History[]>(this.apiUrl);
    }
+   
 }

@@ -1,9 +1,8 @@
 <div>
-  <ul class="list-group" *ngFor="let historyactivity of history">
-    <li class="list-group-item">You created a {{historyactivity.type}}
-    <p> {{historyactivity.modifiedDate}}</p></li>
+  <ul class="list-group" *ngFor="let historyactivity of history; index as i">
+    <li class="list-group-item"><h6>You created a {{historyactivity.type}}</h6>
+        <span><button class="btn btn-info" (click)="viewTask(i)">View Task</button></span>
+    </li>
     <li class="list-group-item">{{historyactivity.description}}</li>
   </ul>
 </div>
-
-

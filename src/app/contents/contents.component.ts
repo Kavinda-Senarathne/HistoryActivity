@@ -11,12 +11,14 @@ import { ContentsService } from './contents.service';
 })
 export class ContentsComponent implements OnInit {
   public history=[];
+  i=this.history.indexOf;
   constructor(private contentsService:ContentsService){}
   ngOnInit() {
     this.contentsService.getHistoryData()
     .subscribe(data => this.history= data);
-
-
+  }
+  viewTask(index:number) {
+    console.log(this.history[index]);
   }
 
 }
