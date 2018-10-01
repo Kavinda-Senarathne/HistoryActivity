@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
+import { History } from '../models/history';
 import { ContentsService } from './contents.service';
+import * as _ from 'lodash';
+
 
 @Component({
   selector: 'app-contents',
@@ -10,18 +13,33 @@ import { ContentsService } from './contents.service';
   styleUrls: ['./contents.component.css']
 })
 export class ContentsComponent implements OnInit {
-  public history=[];
-  i=this.history.indexOf;
-  constructor(private contentsService:ContentsService){}
+  history: History[] = [];
+  i = this.history.indexOf;
+  displayHistory: History[] = [];
+  viewText : History[] = [];
+  constructor(private contentsService: ContentsService) { }
   ngOnInit() {
     this.contentsService.getHistoryData()
-    .subscribe(data => this.history= data);
+      .subscribe(data => this.history = data);
   }
-  viewTask(index:number) {
-    console.log(this.history[index]);
+  navAll() {
+    let history = this.history;
+    this.displayHistory = this.history;
   }
-
+  navNotes() {
+    this.displayHistory = (_.filter(this.history, ['type', 'note']));
+  }
+  navMeetings() {
+    this.displayHistory = (_.filter(this.history, ['type', 'meeting']));
+  }
+  navMails() {
+    this.displayHistory = (_.filter(this.history, ['type', 'email']));
+  }
+  viewTask(i: number) {
+    console.log(this.displayHistory[i]);
+  }
 }
+ 
 
 
 

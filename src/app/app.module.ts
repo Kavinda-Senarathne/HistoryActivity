@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ContentsComponent } from './contents/contents.component';
 import { ContentsService } from './contents/contents.service';
-
-
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 @NgModule({
   declarations: [
@@ -16,8 +14,6 @@ import { ContentsService } from './contents/contents.service';
   ],
   imports: [
     BrowserModule,
-    NgbModule,
-    NgbModule,
     HttpClientModule
   ],
   providers: [ContentsService],

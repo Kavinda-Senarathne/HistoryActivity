@@ -1,8 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar">
+  <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link" href="#" (click)="navAll()">All <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#" (click)="navNotes()">Notes</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#" (click)="navMeetings()">Meetings</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#" (click)="navMails()">E-mails</a>
+          </li>
+      </ul>
+  </div>
+</nav>
 <div>
-  <ul class="list-group" *ngFor="let historyactivity of history; index as i">
-    <li class="list-group-item"><h6>You created a {{historyactivity.type}}</h6>
-        <span><button class="btn btn-info" (click)="viewTask(i)">View Task</button></span>
-    </li>
-    <li class="list-group-item">{{historyactivity.description}}</li>
+  <ul class="list-group" *ngFor="let historyactivity of displayHistory; index as i">
+      <li class="list-group-item">
+          <h6>You created a {{historyactivity.type}}</h6>
+          <span><button class="btn btn-active" (click)="viewTask(i)">View Task</button></span><br>
+          <span>{{historyactivity.description}}</span>
+      </li>
+
   </ul>
 </div>
