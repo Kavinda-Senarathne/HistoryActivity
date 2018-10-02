@@ -35,9 +35,7 @@ export class ContentsComponent implements OnInit {
   navMails() {
     this.displayHistory = (_.filter(this.history, ['type', 'email']));
   }
-  viewTask(i: number) {
-    console.log(this.displayHistory[i]);
-  }
+  viewTask:boolean = false;
 }
  
 
